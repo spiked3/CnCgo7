@@ -121,7 +121,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\TraceLogger2\WpfTraceLogger2.csproj">
+    <ProjectReference Include="..\TraceLogger2\WpfTraceLogger2.csproj">
       <Project>{E3CC057A-6487-4524-A526-AC38B41A3E7D}</Project>
       <Name>WpfTraceLogger2</Name>
     </ProjectReference>
