@@ -73,7 +73,7 @@ namespace CnCgo7
 
         void MouseMove(object sender, MouseEventArgs e)
         {
-            //Spiked3.WpfTraceControl.Enter();
+            //WpfTraceControl.Enter();
             Point p = e.GetPosition(Uie);
             xPos = (float)p.X;
             yPos = (float)p.Y;
@@ -81,13 +81,13 @@ namespace CnCgo7
 
         void MouseUp(object sender, MouseButtonEventArgs e)
         {
-            //Spiked3.WpfTraceControl.Enter();
+            //WpfTraceControl.Enter();
             trackingMouse = false;
         }
 
         void MouseDown(object sender, MouseButtonEventArgs e)
         {
-            //Spiked3.WpfTraceControl.Enter();
+            //WpfTraceControl.Enter();
             Camera3D.PreparePanZoomRot();
             Size s = Uie.RenderSize;
             Point p = e.GetPosition(Uie);

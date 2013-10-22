@@ -8,6 +8,7 @@ using SlimDX;
 using SlimDX.Direct3D11;
 using SlimDX.DXGI;
 using SlimDX.Windows;
+using Spiked3.WpfTraceLogger2;
 using Buffer = SlimDX.Direct3D11.Buffer;
 using Device = SlimDX.Direct3D11.Device;
 
@@ -99,7 +100,7 @@ namespace CnCgo7
 
         public void Setup(D3DViewModel Scene)
         {
-            Spiked3.WpfTraceControl.Enter();
+            WpfTraceControl.Enter();
 
             ModelMatrix = Matrix.Identity;
             DataStream Stream = new DataStream(vertices.Length * 11 * 4, true, true);
@@ -122,7 +123,7 @@ namespace CnCgo7
 
             Vbb = new VertexBufferBinding(Verticies, 11 * 4, 0);
 
-            Spiked3.WpfTraceControl.Leave();
+            WpfTraceControl.Leave();
         }
 
         public void Render(D3DViewModel Scene)
@@ -149,7 +150,7 @@ namespace CnCgo7
 
         public void Dispose()
         {
-            Spiked3.WpfTraceControl.Enter();
+            WpfTraceControl.Enter();
 
             if (Verticies != null)
             {
@@ -162,7 +163,7 @@ namespace CnCgo7
                 IndexBuffer = null;
             }
 
-            Spiked3.WpfTraceControl.Leave();
+            WpfTraceControl.Leave();
         }
     }
 
@@ -239,7 +240,7 @@ namespace CnCgo7
 
         public void Setup(D3DViewModel Scene)
         {
-            Spiked3.WpfTraceControl.Enter();
+            WpfTraceControl.Enter();
 
             ModelMatrix = Matrix.Identity;
             DataStream Stream = new DataStream(vertices.Length * 11 * 4, true, true);
@@ -276,7 +277,7 @@ namespace CnCgo7
 
             Vbb = new VertexBufferBinding(Verticies, 11 * 4, 0);
 
-            Spiked3.WpfTraceControl.Leave();
+            WpfTraceControl.Leave();
         }
 
         public void Render(D3DViewModel Scene)
@@ -303,7 +304,7 @@ namespace CnCgo7
 
         public void Dispose()
         {
-            Spiked3.WpfTraceControl.Enter();
+            WpfTraceControl.Enter();
 
             if (Verticies != null)
             {
@@ -316,7 +317,7 @@ namespace CnCgo7
                 IndexBuffer = null;
             }
 
-            Spiked3.WpfTraceControl.Leave();
+            WpfTraceControl.Leave();
         }
     }
 }

@@ -13,6 +13,7 @@ using SlimDX;
 using SlimDX.Direct3D11;
 using SlimDX.DXGI;
 using SlimDX.Windows;
+using Spiked3.WpfTraceLogger2;
 using Buffer = SlimDX.Direct3D11.Buffer;
 using Device = SlimDX.Direct3D11.Device;
 using SlimDX.D3DCompiler;
@@ -68,18 +69,18 @@ namespace CnCgo7
 
         public D3DViewModel(Window Window, Image Image, Border ImageBorder)            
         {
-            Spiked3.WpfTraceControl.Enter();
+            WpfTraceControl.Enter();
             TargetWindow = Window;
             TargetImage = Image;
             TargetBorder = ImageBorder;
             TargetWindow.Loaded += Window_Loaded;
             TargetWindow.Closing += Window_Closing;
-            Spiked3.WpfTraceControl.Leave();
+            WpfTraceControl.Leave();
         }
 
         void Resize(UIElement ImageBorder)
         {
-            Spiked3.WpfTraceControl.Enter();
+            WpfTraceControl.Enter();
 
             float aspectRatio = (float)ImageBorder.RenderSize.Width / (float)ImageBorder.RenderSize.Height;
             float fovAngleY = (float)(70.0f * Math.PI / 180.0f);
@@ -101,7 +102,7 @@ namespace CnCgo7
 
             cb.Projection = perspectiveMatrix; // * orientationMatrix;
 
-            Spiked3.WpfTraceControl.Leave();
+            WpfTraceControl.Leave();
         }
 
         Vector4 Light1Pos = new Vector4(-0.577f, -0.577f, 0.577f, .5f);
@@ -132,7 +133,7 @@ namespace CnCgo7
 
         void InitD3D(UIElement ImageBorder)
         {
-            Spiked3.WpfTraceControl.Enter();
+            WpfTraceControl.Enter();
 
             Device = new Device(DriverType.Hardware, DeviceCreationFlags.Debug | DeviceCreationFlags.BgraSupport, FeatureLevel.Level_11_0);
 
@@ -195,7 +196,7 @@ namespace CnCgo7
             
             Resize(ImageBorder);
 
-            Spiked3.WpfTraceControl.Leave();
+            WpfTraceControl.Leave();
         }
 
         void OnRendering(object sender, EventArgs e)
@@ -212,7 +213,7 @@ namespace CnCgo7
 
         void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            Spiked3.WpfTraceControl.Enter();
+            WpfTraceControl.Enter();
 
             D3DImageContainer = new D3DImageSlimDX();
 
@@ -231,7 +232,7 @@ namespace CnCgo7
             D3DImageContainer.SetBackBufferSlimDX(Texture);
             BeginRenderingScene();
 
-            Spiked3.WpfTraceControl.Leave();
+            WpfTraceControl.Leave();
         }
 
         void TargetImage_SizeChanged(object sender, SizeChangedEventArgs e)
@@ -273,7 +274,7 @@ namespace CnCgo7
 
         public void Dispose()
         {
-            Spiked3.WpfTraceControl.Enter();
+            WpfTraceControl.Enter();
 
             if (D3DImageContainer != null)
             {
@@ -344,7 +345,7 @@ namespace CnCgo7
                 Device = null;
             }
 
-            Spiked3.WpfTraceControl.Leave();
+            WpfTraceControl.Leave();
         }
     }
 }

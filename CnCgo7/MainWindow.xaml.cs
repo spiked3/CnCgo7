@@ -22,6 +22,7 @@ using SlimDX;
 using SlimDX.Direct3D11;
 using SlimDX.DXGI;
 using SlimDX.Windows;
+using Spiked3.WpfTraceLogger2;
 using Buffer = SlimDX.Direct3D11.Buffer;
 using Device = SlimDX.Direct3D11.Device;
 using SlimDX.Multimedia;
@@ -149,7 +150,7 @@ namespace CnCgo7
 
         private void traceLogger1_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            ((Spiked3.WpfTraceControl)sender).Clear();
+            ((WpfTraceControl)sender).Clear();
         }
 
         // +++ consider saving these between sessions

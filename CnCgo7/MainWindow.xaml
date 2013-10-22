@@ -4,6 +4,7 @@
         xmlns:Spiked3="clr-namespace:Spiked3;assembly=WpfTraceLogger2" 
         xmlns:WPG="clr-namespace:WPG;assembly=WPG" 
         xmlns:local="clr-namespace:CnCgo7" 
+        xmlns:WpfTraceLogger2="clr-namespace:Spiked3.WpfTraceLogger2;assembly=WpfTraceLogger2" 
         x:Class="CnCgo7.MainWindow"
         UseLayoutRounding="True"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
@@ -97,7 +98,7 @@
                         </TabItem>
                         <TabItem Header="Rasterizer" >
                             <DockPanel LastChildFill="False">
-                                <WPG:PropertyGrid Name="RasterizerWPG" DockPanel.Dock="Top"/>
+                                <WPG:PropertyGrid x:Name="RasterizerWPG" DockPanel.Dock="Top"/>
                                 <StackPanel Orientation="Horizontal"  DockPanel.Dock="Bottom" HorizontalAlignment="Center">
                                     <Button Content="Get" Margin="8" Width="48" Click="btnRasterizer"/>
                                     <Button Content="Set" Margin="8" Width="48" Click="btnRasterizer"/>
@@ -110,7 +111,7 @@
                                 <Button Content="Save/_Compile" Width="96"  Margin="4" Click="btnShaderSaveRun" DockPanel.Dock="Bottom"/>
                                 <!--</StackPanel>-->
                                 <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
-                                    <TextBox Name="ShaderEdit1" Margin="0,0,0,0" Background="Pink" Foreground="Black" AcceptsReturn="True" FontSize="14" FontFamily="Consolas" />
+                                    <TextBox x:Name="ShaderEdit1" Margin="0,0,0,0" Background="Pink" Foreground="Black" AcceptsReturn="True" FontSize="14" FontFamily="Consolas" />
                                 </ScrollViewer>
                             </DockPanel>
                         </TabItem>
@@ -132,7 +133,7 @@
                         <Image x:Name="SlimDXImage" Grid.Row="0" Focusable="True"/>
                     </Border>
                     <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
-                    <Spiked3:WpfTraceControl Grid.Row="2" MouseDoubleClick="traceLogger1_MouseDoubleClick"  />
+                    <WpfTraceLogger2:WpfTraceControl Grid.Row="2" MouseDoubleClick="traceLogger1_MouseDoubleClick"  />
                 </Grid>
 
             </Grid>

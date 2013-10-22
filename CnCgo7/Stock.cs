@@ -5,6 +5,7 @@ using SlimDX.DXGI;
 using Spiked3;
 using Debug = System.Diagnostics.Debug;
 using Matrix = SlimDX.Matrix;
+using Spiked3.WpfTraceLogger2;
 
 namespace CnCgo7
 {
