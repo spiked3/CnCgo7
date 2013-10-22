@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CnCgo7", "CnCgo7\CnCgo7.csproj", "{F2ACFC52-E00A-48B4-A69C-9A8B506DBC27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTraceLogger2", "..\TraceLogger2\WpfTraceLogger2.csproj", "{E3CC057A-6487-4524-A526-AC38B41A3E7D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPG", "WPG\WPG.csproj", "{022EDA6A-0B76-44C3-A530-8312C1B40030}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Part1|Any CPU = Part1|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2ACFC52-E00A-48B4-A69C-9A8B506DBC27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2ACFC52-E00A-48B4-A69C-9A8B506DBC27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F2ACFC52-E00A-48B4-A69C-9A8B506DBC27}.Part1|Any CPU.ActiveCfg = Release|Any CPU
+		{F2ACFC52-E00A-48B4-A69C-9A8B506DBC27}.Part1|Any CPU.Build.0 = Release|Any CPU
+		{F2ACFC52-E00A-48B4-A69C-9A8B506DBC27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2ACFC52-E00A-48B4-A69C-9A8B506DBC27}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3CC057A-6487-4524-A526-AC38B41A3E7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3CC057A-6487-4524-A526-AC38B41A3E7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3CC057A-6487-4524-A526-AC38B41A3E7D}.Part1|Any CPU.ActiveCfg = Release|Any CPU
+		{E3CC057A-6487-4524-A526-AC38B41A3E7D}.Part1|Any CPU.Build.0 = Release|Any CPU
+		{E3CC057A-6487-4524-A526-AC38B41A3E7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3CC057A-6487-4524-A526-AC38B41A3E7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{022EDA6A-0B76-44C3-A530-8312C1B40030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{022EDA6A-0B76-44C3-A530-8312C1B40030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{022EDA6A-0B76-44C3-A530-8312C1B40030}.Part1|Any CPU.ActiveCfg = Part1|Any CPU
+		{022EDA6A-0B76-44C3-A530-8312C1B40030}.Part1|Any CPU.Build.0 = Part1|Any CPU
+		{022EDA6A-0B76-44C3-A530-8312C1B40030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{022EDA6A-0B76-44C3-A530-8312C1B40030}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

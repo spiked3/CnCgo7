@@ -1,0 +1,142 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Spiked3="clr-namespace:Spiked3;assembly=WpfTraceLogger2" 
+        xmlns:WPG="clr-namespace:WPG;assembly=WPG" 
+        xmlns:local="clr-namespace:CnCgo7" 
+        x:Class="CnCgo7.MainWindow"
+        UseLayoutRounding="True"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}"
+        Title="CncGo Version 7" Height="1024.081" Width="1323.629">
+    <Grid>
+        <DockPanel>
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_File">
+                    <MenuItem Header="_New" />
+                    <MenuItem Header="_Open ..." />
+                    <MenuItem Header="_Save " />
+                    <MenuItem Header="Save _As ..." />
+                    <Separator />
+                    <MenuItem Header="E_xit" Click="mnuFileExit" />
+                </MenuItem>
+                <MenuItem Header="_Debug">
+                    <MenuItem Header="_Checkable Example" IsCheckable="True" />
+                </MenuItem>
+            </Menu>
+            <ToolBar DockPanel.Dock="Top">
+                <Button Click="btnNew" ToolTip="New GCode">
+                    <Image Source="ToolbarImages/Document-02.png" SnapsToDevicePixels="True" Stretch="None" />
+                </Button>
+                <Button Click="btnOpen" ToolTip="Open GCode">
+                    <Image Source="ToolbarImages/Open.png" SnapsToDevicePixels="True" Stretch="None" />
+                </Button>
+                <Button Click="btnSave">
+                    <Image Source="ToolbarImages/Save.png" SnapsToDevicePixels="True" Stretch="None" />
+                </Button>
+                <Button Click="btnSaveAs">
+                    <Image Source="ToolbarImages/Save As.png" SnapsToDevicePixels="True" Stretch="None" />
+                </Button>
+                <Separator Margin="4,0,4,0" />
+                <Button Click="btnRun" ToolTip="Run GCode">
+                    <Image Source="ToolbarImages/Run.png" SnapsToDevicePixels="True" Stretch="None" />
+                </Button>
+                <Button >
+                    <Image Source="ToolbarImages/Media-Pause.png" SnapsToDevicePixels="True" Stretch="None" />
+                </Button>
+                <Button >
+                    <Image Source="ToolbarImages/Command-Reset.png" SnapsToDevicePixels="True" Stretch="None" />
+                </Button>
+                <Separator />
+                <Button >
+                    <Image Source="ToolbarImages/Toolbox-01.png" SnapsToDevicePixels="True" Stretch="None" />
+                </Button>
+                <Separator Margin="4,0,4,0" />
+                <TextBlock VerticalAlignment="Center" Margin="6,0,8,0" Text="MDI" />
+                <TextBox x:Name="MdiText" Margin="0,0,8,0" Width="96" KeyDown="MdiTextBox_KeyDown" PreviewKeyDown="MdiTextBox_PreviewKeyDown"/>
+                <Separator Margin="4,0,4,0" />
+                <Separator Margin="4,0,4,0" />
+                <Button Click="btnResetScene" >
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="Reset Scene" VerticalAlignment="Center"/>
+                        <Image Source="ToolbarImages/Danger.png" SnapsToDevicePixels="True" Stretch="None" />
+                    </StackPanel>
+                </Button>
+                <Separator Margin="4,0,4,0" />
+                <Button Click="mnuFileExit">
+                    <Image Source="ToolbarImages/Logout.png" SnapsToDevicePixels="True" Stretch="None" />
+                </Button>
+            </ToolBar>
+            <StatusBar DockPanel.Dock="Bottom">
+                <StatusBarItem x:Name="StatusBarItem1" Content="Status"/>
+            </StatusBar>
+            <Grid >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="420"/>
+                    <ColumnDefinition Width="4"/>
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Grid.ColumnSpan="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="4"/>
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TabControl Grid.Row="0" TabStripPlacement="Bottom">
+                        <TabItem Header="GCode">
+                            <local:GCodeEdit x:Name="GCodeEdit1"/>
+                        </TabItem>
+                        <TabItem Header="Dev" >
+                            <StackPanel Background="#FFF9F993" >
+                                <Button Content="Test2 (bit)"  Margin="4" Click="btnTest2" />
+                                <Button Content="Test4 (Stock)"  Margin="4" Click="btnTest4"  />
+                                <Button Content="Debug Break"  Margin="4" Click="btnDebugBreak" />
+                                <Button Content="Spare"  Margin="4" />
+                                <Button Content="Spare"  Margin="4" />
+                            </StackPanel>
+                        </TabItem>
+                        <TabItem Header="Rasterizer" >
+                            <DockPanel LastChildFill="False">
+                                <WPG:PropertyGrid Name="RasterizerWPG" DockPanel.Dock="Top"/>
+                                <StackPanel Orientation="Horizontal"  DockPanel.Dock="Bottom" HorizontalAlignment="Center">
+                                    <Button Content="Get" Margin="8" Width="48" Click="btnRasterizer"/>
+                                    <Button Content="Set" Margin="8" Width="48" Click="btnRasterizer"/>
+                                </StackPanel>
+                            </DockPanel>
+                        </TabItem>
+                        <TabItem Header="Shader" >
+                            <DockPanel >
+                                <!--<StackPanel Orientation="Horizontal" DockPanel.Dock="Bottom" HorizontalAlignment="Center">-->
+                                <Button Content="Save/_Compile" Width="96"  Margin="4" Click="btnShaderSaveRun" DockPanel.Dock="Bottom"/>
+                                <!--</StackPanel>-->
+                                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                                    <TextBox Name="ShaderEdit1" Margin="0,0,0,0" Background="Pink" Foreground="Black" AcceptsReturn="True" FontSize="14" FontFamily="Consolas" />
+                                </ScrollViewer>
+                            </DockPanel>
+                        </TabItem>
+
+                    </TabControl>
+                    <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <WPG:PropertyGrid x:Name="WpgGrid1" Grid.Row="2" />
+                </Grid>
+
+                <GridSplitter Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.RowSpan="3"  />
+
+                <Grid Grid.Column="2" Grid.ColumnSpan="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="4"/>
+                        <RowDefinition Height="140"/>
+                    </Grid.RowDefinitions>
+                    <Border x:Name="ImageBorder" >
+                        <Image x:Name="SlimDXImage" Grid.Row="0" Focusable="True"/>
+                    </Border>
+                    <GridSplitter Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" />
+                    <Spiked3:WpfTraceControl Grid.Row="2" MouseDoubleClick="traceLogger1_MouseDoubleClick"  />
+                </Grid>
+
+            </Grid>
+        </DockPanel>
+
+    </Grid>
+</Window>

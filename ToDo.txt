@@ -1,0 +1,11 @@
+tool model
+tool lib
+grid (using line)
+mcs and/or lookAt gizmo on mouse down (like Repetier)
+get coordinate system in order (DX up vs. CNC up) <- sooner vs later
+use mm/inches as internal unit
+
+real csg?
+Arcs
+swept segments and/or optimizations
+
