@@ -198,7 +198,7 @@ namespace CnCgo7
             }
             else if (isArcMoving)
             {
-                // TODO
+                // TODO isArcMoving
             }
 
             //if (ToolLib.ToolMap.ContainsKey(CurrentTool))

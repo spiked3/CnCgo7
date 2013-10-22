@@ -131,7 +131,7 @@ namespace CnCgo7
 
         public static BspTree BspBox(float x, float y, float z, float l, float w, float h, System.Windows.Media.Color color)
         {
-            // TODO could/should use BspCylinder with a facet of 4
+            // TODO could/should? use BspCylinder with a facet of 4
             var Polys = new List<Polygon>(6);
 
             Polys.Add(new Polygon(new Vertex[] { 
